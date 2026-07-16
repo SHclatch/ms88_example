@@ -1,0 +1,8 @@
+board:
+  name: ms88_example
+  vendor: minew
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk
+

@@ -1,0 +1,4 @@
+config BOARD_MS88_EXAMPLE
+    bool "MS88SF21 Example"
+    depends on SOC_NRF52840_QIAA
+

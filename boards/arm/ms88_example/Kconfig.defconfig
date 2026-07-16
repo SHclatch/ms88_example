@@ -1,0 +1,17 @@
+if BOARD_MS88_EXAMPLE
+
+config ZMK_KEYBOARD_NAME
+    default "MS88SF21_EXAMPLE"
+
+if USB_DEVICE_STACK
+
+config USB_NRFX
+    default y
+
+endif # USB_DEVICE_STACK
+
+config BT_CTLR
+    default BT
+
+endif # BOARD_MS88_EXAMPLE
+
