@@ -20,6 +20,4 @@
 ---
 include:
   - board: ms88_example
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: ms88_example
