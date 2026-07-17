@@ -23,10 +23,10 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <2>;
+        columns = <3>;
         rows = <1>;
         map = <
-            RC(0,0) RC(0,1)
+            RC(0,0) RC(0,1) RC(0,2)
         >;
     };
 
@@ -38,7 +38,22 @@
         row-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         col-gpios =
             <&gpio0 6 GPIO_ACTIVE_HIGH>,
-            <&gpio0 8 GPIO_ACTIVE_HIGH>;
+            <&gpio0 8 GPIO_ACTIVE_HIGH>,
+            <&gpio1 9 GPIO_ACTIVE_HIGH>;
+    };
+
+    encoder_scroll: encoder_scroll {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <96>;
+        status = "okay";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_scroll>;
+        triggers-per-rotation = <24>;
     };
 
     physical_layout0: physical_layout_0 {
@@ -50,6 +65,7 @@
         keys = <
             &key_physical_attrs 100 100   0 0 0 0 0
             &key_physical_attrs 100 100 100 0 0 0 0
+            &key_physical_attrs 100 100 200 0 0 0 0
         >;
     };
 };
