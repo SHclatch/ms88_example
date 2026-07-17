@@ -53,7 +53,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder_scroll>;
-        triggers-per-rotation = <12>;
+        triggers-per-rotation = <24>;
     };
 
     physical_layout0: physical_layout_0 {
