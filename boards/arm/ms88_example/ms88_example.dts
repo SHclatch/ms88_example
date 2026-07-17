@@ -44,8 +44,8 @@
 
     encoder_scroll: encoder_scroll {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <24>;
         status = "okay";
     };
@@ -53,7 +53,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder_scroll>;
-        triggers-per-rotation = <12>;
+        triggers-per-rotation = <24>;
     };
 
     physical_layout0: physical_layout_0 {
